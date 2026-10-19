@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunar Veil Tarot - Descoperă Potențialul Tău</title>
+    <title>Lunar Veil Tarot - Servicii și Ghidare</title>
     <style>
         * {
             box-sizing: border-box;
@@ -12,8 +12,7 @@
         }
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            /* Aici am adăugat o imagine mistică de fundal în spatele site-ului */
-            background-image: linear-gradient(rgba(26, 9, 51, 0.85), rgba(26, 9, 51, 0.85)), url('https://unsplash.com');
+            background-image: linear-gradient(rgba(26, 9, 51, 0.9), rgba(26, 9, 51, 0.9)), url('https://unsplash.com');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -22,17 +21,17 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
         }
         .container { 
             background: #2a144d; 
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             border-radius: 15px; 
             box-shadow: 0 15px 35px rgba(0,0,0,0.7); 
             overflow: hidden;
             text-align: center;
-            border: 2px solid #d4af37; /* Margine aurie puțin mai groasă */
+            border: 2px solid #d4af37; 
         }
         .promo-img {
             width: 100%;
@@ -40,74 +39,160 @@
             display: block;
             border-bottom: 2px solid #d4af37;
         }
+        /* Logo text special care apare DOAR pe mobil */
+        .mobile-logo {
+            display: none;
+            padding: 30px 10px;
+            background: #220e3d;
+            color: #d4af37;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #d4af37;
+        }
         .content {
             padding: 45px 35px;
         }
         h1 { 
             color: #d4af37; 
-            font-size: 2.6rem; /* Dimensiune optimă pe PC */
-            margin-bottom: 20px;
+            font-size: 2.8rem; 
+            margin-bottom: 15px;
             letter-spacing: 1px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        p { 
+        .subtitle { 
             color: #dfd5f0; 
-            font-size: 1.4rem; /* Dimensiune optimă pe PC */
+            font-size: 1.4rem; 
             line-height: 1.7;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
+        }
+        
+        /* Secțiunea de opțiuni / servicii */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .service-card {
+            background: #1c0a37;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+        .service-card h3 {
+            color: #d4af37;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: #cbbad9;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .price {
+            font-size: 1.3rem;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: block;
         }
         .btn { 
             background: #d4af37; 
             color: #1a0933; 
-            padding: 16px 50px; 
+            padding: 12px 25px; 
             text-decoration: none; 
-            border-radius: 30px; 
-            display: inline-block; 
+            border-radius: 20px; 
+            display: block;
+            text-align: center;
             font-weight: bold;
-            font-size: 1.3rem; 
+            font-size: 1.1rem; 
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
         }
         .btn:hover {
             background: #f3cd46;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
         }
 
-        /* CONFIGURARE SPECIALĂ PENTRU TELEFON (Mărește scrisul automat pe ecrane mici) */
+        /* Optimizări pentru ecrane mici (Telefoane) */
         @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-            .content {
-                padding: 30px 15px; /* Spațiu mai compact pe laterale */
-            }
-            h1 {
-                font-size: 2.2rem !important; /* Titlu foarte vizibil pe mobil */
-            }
-            p {
-                font-size: 1.3rem !important; /* Textul descrierii mărit special pentru telefon */
-                line-height: 1.6;
-            }
-            .btn {
-                font-size: 1.2rem !important;
-                width: 100%; /* Butonul ocupă toată lățimea pe telefon ca să fie ușor de apăsat */
-                padding: 15px 20px;
-            }
+            body { padding: 10px; }
+            .promo-img { display: none; } /* Ascundem poza mare pe mobil pentru că scrisul din ea e prea mic */
+            .mobile-logo { display: block; } /* Arătăm logo-ul text curat */
+            .content { padding: 30px 15px; }
+            h1 { font-size: 2.2rem; }
+            .subtitle { font-size: 1.2rem; margin-bottom: 30px; }
+            .service-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Poza ta promoțională (rămâne vizibilă doar pe PC) -->
         <img src="image_16901475.jpg" alt="Lunar Veil Tarot Banner" class="promo-img">
         
+        <!-- Logo text alternativ care se vede doar pe mobil -->
+        <div class="mobile-logo">🔮 LUNAR VEIL TAROT</div>
+        
         <div class="content">
-            <h1>🔮 Lunar Veil Tarot</h1>
-            <p>Lecturi în Carieră, Calea Vieții și Ghidare Profundă a Sufletului. Trimite un e-mail pentru a rezerva o ședință personalizată.</p>
+            <h1>Lunar Veil Tarot</h1>
+            <p class="subtitle">Descoperă ce îți rezervă viitorul. Alege serviciul de ghidare de care ai nevoie în acest moment și trimite o solicitare prin e-mail.</p>
             
-            <!-- Pune e-mailul tău în loc de adresa de mai jos -->
-            <a href="splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
+            <!-- AICI ÎNCEPE GRILA CU CELE 3 OPȚIUNI -->
+            <div class="services-grid">
+                
+                <!-- Opțiunea 1 -->
+                <div class="service-card">
+                    <div>
+                        <h3>💼 Carieră & Succes</h3>
+                        <p>Ghidare profundă legată de job, afaceri sau schimbări profesionale importante în viața ta.</p>
+                    </div>
+                    <div>
+                        <span class="price">Sedință 45 min</span>
+                        <!-- Schimbă adresa de e-mail de mai jos -->
+                        <a href="splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
+                    </div>
+                </div>
+
+                <!-- Opțiunea 2 -->
+                <div class="service-card">
+                    <div>
+                        <h3>❤️ Dragoste & Relații</h3>
+                        <p>Claritate în viața sentimentală, compatibilitate de cuplu și răspunsuri la întrebări de suflet.</p>
+                    </div>
+                    <div>
+                        <span class="price">Sedință 45 min</span>
+                        <!-- Schimbă adresa de e-mail de mai jos -->
+                        <a href="splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
+                    </div>
+                </div>
+
+                <!-- Opțiunea 3 -->
+                <div class="service-card">
+                    <div>
+                        <h3>✨ Ghidare Spirituală</h3>
+                        <p>O analiză completă a căii vieții tale, mesaje de la ghizii spirituali și evoluție personală.</p>
+                    </div>
+                    <div>
+                        <span class="price">Sedință 60 min</span>
+                        <!-- Schimbă adresa de e-mail de mai jos -->
+                        <a href="splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- SFÂRȘIT GRILĂ -->
+            
         </div>
     </div>
 </body>
