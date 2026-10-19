@@ -64,13 +64,11 @@
             line-height: 1.7;
             margin-bottom: 40px;
         }
-        
-        /* Grila Servicii */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 25px;
-            margin-bottom: 50px; /* Spațiu mai mare înainte de FAQ */
+            margin-bottom: 50px;
             text-align: left;
         }
         .service-card {
@@ -122,8 +120,6 @@
             background: #f3cd46;
             box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
         }
-
-        /* Secțiunea FAQ */
         .faq-section {
             text-align: left;
             margin-top: 40px;
@@ -136,53 +132,44 @@
             margin-bottom: 25px;
             text-align: center;
         }
-        .faq-item {
+        details {
             background: #1c0a37;
             border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 8px;
             margin-bottom: 15px;
             overflow: hidden;
         }
-        .faq-question {
+        summary {
             padding: 18px 20px;
             font-size: 1.2rem;
             font-weight: bold;
             color: #dfd5f0;
             cursor: pointer;
+            list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
             user-select: none;
-            transition: background 0.3s;
         }
-        .faq-question:hover {
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary:hover {
             background: #251046;
             color: #d4af37;
         }
+        summary::after {
+            content: "✦";
+            color: #d4af37;
+        }
         .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
             background: #15062b;
             color: #cbbad9;
             font-size: 1.1rem;
             line-height: 1.6;
-        }
-        /* Când clasa 'active' e adăugată, răspunsul se deschide */
-        .faq-item.active .faq-answer {
-            max-height: 200px;
             padding: 20px;
             border-top: 1px solid rgba(212, 175, 55, 0.1);
         }
-        .faq-toggle-icon {
-            transition: transform 0.3s;
-            color: #d4af37;
-        }
-        .faq-item.active .faq-toggle-icon {
-            transform: rotate(45px);
-        }
-
-        /* Mobil */
         @media (max-width: 600px) {
             body { padding: 10px; }
             .promo-img { display: none; } 
@@ -191,8 +178,8 @@
             h1 { font-size: 2.2rem; }
             .subtitle { font-size: 1.2rem; margin-bottom: 30px; }
             .service-card { padding: 20px; }
-            .faq-question { font-size: 1.1rem; padding: 15px; }
-            .faq-answer { font-size: 1rem; }
+            summary { font-size: 1.1rem; padding: 15px; }
+            .faq-answer { font-size: 1rem; padding: 15px; }
         }
     </style>
 </head>
@@ -205,7 +192,6 @@
             <h1>Lunar Veil Tarot</h1>
             <p class="subtitle">Descoperă ce îți rezervă viitorul. Alege serviciul de ghidare de care ai nevoie în acest moment și trimite o solicitare prin e-mail.</p>
             
-            <!-- Servicii -->
             <div class="services-grid">
                 <div class="service-card">
                     <div>
@@ -214,7 +200,7 @@
                     </div>
                     <div>
                         <span class="price">Ședință 45 min</span>
-                        <a href="mailto:adresa_ta_de_email@://gmail.com" class="btn">BOOK NOW</a>
+                        <a href="mailto:splitlight.ltd@gmail.com?subject=Rezervare%20-%20Tarot%20Cariera" class="btn">BOOK NOW</a>
                     </div>
                 </div>
 
@@ -225,7 +211,7 @@
                     </div>
                     <div>
                         <span class="price">Ședință 45 min</span>
-                        <a href="mailto:adresa_ta_de_email@://gmail.com" class="btn">BOOK NOW</a>
+                        <a href="mailto:splitlight.ltd@gmail.com?subject=Rezervare%20-%20Tarot%20Dragoste" class="btn">BOOK NOW</a>
                     </div>
                 </div>
 
@@ -236,32 +222,31 @@
                     </div>
                     <div>
                         <span class="price">Ședință 60 min</span>
-                        <a href="mailto:adresa_ta_de_email@://gmail.com" class="btn">BOOK NOW</a>
+                        <a href="mailto:splitlight.ltd@gmail.com?subject=Rezervare%20-%20Ghidare%20Spirituala" class="btn">BOOK NOW</a>
                     </div>
                 </div>
             </div>
 
-            <!-- SECȚIUNEA FAQ (ÎNTREBĂRI FRECVENTE) -->
             <div class="faq-section">
                 <h2>✨ Întrebări Frecvente (FAQ)</h2>
                 
-                <div class="faq-item">
-                    <div class="faq-question">Cum mă pregătesc pentru o ședință? <span class="faq-toggle-icon">✦</span></div>
+                <details>
+                    <summary>Cum mă pregătesc pentru o ședință?</summary>
                     <div class="faq-answer">Găsește un loc liniștit unde nu vei fi deranjat(ă). Înainte de sesiune, încearcă să îți clarifici intenția și gândește-te la 1-2 întrebări specifice pe care vrei să le adresezi cărților. Păstrează o minte deschisă.</div>
-                </div>
+                </details>
 
-                <div class="faq-item">
-                    <div class="faq-question">Ce se întâmplă dacă e-mailul nu ajunge? <span class="faq-toggle-icon">✦</span></div>
+                <details>
+                    <summary>Ce se întâmplă dacă e-mailul nu ajunge?</summary>
                     <div class="faq-answer">Răspund la toate solicitările în maximum 24-48 de ore. Dacă nu ai primit un răspuns, te rog să verifici folderul Spam/Junk din e-mailul tău sau să trimiți din nou mesajul, asigurându-te că adresa este scrisă corect.</div>
-                </div>
+                </details>
 
-                <div class="faq-item">
-                    <div class="faq-question">Lecturile de tarot îmi decid complet destinul? <span class="faq-toggle-icon">✦</span></div>
+                <details>
+                    <summary>Lecturile de tarot îmi decid complet destinul?</summary>
                     <div class="faq-answer">Nu. Cărțile de tarot arată energiile și potențialul din momentul prezent, oferind ghidare și perspective. Deciziile finale și acțiunile îți aparțin întotdeauna în totalitate, având liber arbitru.</div>
-                </div>
+                </details>
             </div>
             
         </div>
     </div>
-
-    <!-- Script simplu pentru a face animația de deschidere la click pe întrebări -->
+</body>
+</html>
