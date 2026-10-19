@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunar Veil Tarot - Servicii și Ghidare</title>
+    <title>Lunar Veil Tarot - Servicii și Întrebări Frecvente</title>
     <style>
         * {
             box-sizing: border-box;
@@ -39,7 +39,6 @@
             display: block;
             border-bottom: 2px solid #d4af37;
         }
-        /* Logo text special care apare DOAR pe mobil */
         .mobile-logo {
             display: none;
             padding: 30px 10px;
@@ -66,12 +65,12 @@
             margin-bottom: 40px;
         }
         
-        /* Secțiunea de opțiuni / servicii */
+        /* Grila Servicii */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 25px;
-            margin-bottom: 20px;
+            margin-bottom: 50px; /* Spațiu mai mare înainte de FAQ */
             text-align: left;
         }
         .service-card {
@@ -124,76 +123,145 @@
             box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
         }
 
-        /* Optimizări pentru ecrane mici (Telefoane) */
+        /* Secțiunea FAQ */
+        .faq-section {
+            text-align: left;
+            margin-top: 40px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            padding-top: 40px;
+        }
+        .faq-section h2 {
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .faq-item {
+            background: #1c0a37;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 18px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #dfd5f0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #251046;
+            color: #d4af37;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background: #15062b;
+            color: #cbbad9;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        /* Când clasa 'active' e adăugată, răspunsul se deschide */
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .faq-toggle-icon {
+            transition: transform 0.3s;
+            color: #d4af37;
+        }
+        .faq-item.active .faq-toggle-icon {
+            transform: rotate(45px);
+        }
+
+        /* Mobil */
         @media (max-width: 600px) {
             body { padding: 10px; }
-            .promo-img { display: none; } /* Ascundem poza mare pe mobil pentru că scrisul din ea e prea mic */
-            .mobile-logo { display: block; } /* Arătăm logo-ul text curat */
+            .promo-img { display: none; } 
+            .mobile-logo { display: block; } 
             .content { padding: 30px 15px; }
             h1 { font-size: 2.2rem; }
             .subtitle { font-size: 1.2rem; margin-bottom: 30px; }
             .service-card { padding: 20px; }
+            .faq-question { font-size: 1.1rem; padding: 15px; }
+            .faq-answer { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Poza ta promoțională (rămâne vizibilă doar pe PC) -->
         <img src="image_16901475.jpg" alt="Lunar Veil Tarot Banner" class="promo-img">
-        
-        <!-- Logo text alternativ care se vede doar pe mobil -->
         <div class="mobile-logo">🔮 LUNAR VEIL TAROT</div>
         
         <div class="content">
             <h1>Lunar Veil Tarot</h1>
             <p class="subtitle">Descoperă ce îți rezervă viitorul. Alege serviciul de ghidare de care ai nevoie în acest moment și trimite o solicitare prin e-mail.</p>
             
-            <!-- AICI ÎNCEPE GRILA CU CELE 3 OPȚIUNI -->
+            <!-- Servicii -->
             <div class="services-grid">
-                
-                <!-- Opțiunea 1 -->
                 <div class="service-card">
                     <div>
                         <h3>💼 Carieră & Succes</h3>
                         <p>Ghidare profundă legată de job, afaceri sau schimbări profesionale importante în viața ta.</p>
                     </div>
                     <div>
-                        <span class="price">Sedință 45 min</span>
-                        <!-- Schimbă adresa de e-mail de mai jos -->
+                        <span class="price">Ședință 45 min</span>
                         <a href="mailto:splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
                     </div>
                 </div>
 
-                <!-- Opțiunea 2 -->
                 <div class="service-card">
                     <div>
                         <h3>❤️ Dragoste & Relații</h3>
                         <p>Claritate în viața sentimentală, compatibilitate de cuplu și răspunsuri la întrebări de suflet.</p>
                     </div>
                     <div>
-                        <span class="price">Sedință 45 min</span>
-                        <!-- Schimbă adresa de e-mail de mai jos -->
+                        <span class="price">Ședință 45 min</span>
                         <a href="mailto:splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
                     </div>
                 </div>
 
-                <!-- Opțiunea 3 -->
                 <div class="service-card">
                     <div>
                         <h3>✨ Ghidare Spirituală</h3>
                         <p>O analiză completă a căii vieții tale, mesaje de la ghizii spirituali și evoluție personală.</p>
                     </div>
                     <div>
-                        <span class="price">Sedință 60 min</span>
-                        <!-- Schimbă adresa de e-mail de mai jos -->
+                        <span class="price">Ședință 60 min</span>
                         <a href="mailto:splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
                     </div>
                 </div>
-
             </div>
-            <!-- SFÂRȘIT GRILĂ -->
+
+            <!-- SECȚIUNEA FAQ (ÎNTREBĂRI FRECVENTE) -->
+            <div class="faq-section">
+                <h2>✨ Întrebări Frecvente (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Cum mă pregătesc pentru o ședință? <span class="faq-toggle-icon">✦</span></div>
+                    <div class="faq-answer">Găsește un loc liniștit unde nu vei fi deranjat(ă). Înainte de sesiune, încearcă să îți clarifici intenția și gândește-te la 1-2 întrebări specifice pe care vrei să le adresezi cărților. Păstrează o minte deschisă.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Ce se întâmplă dacă e-mailul nu ajunge? <span class="faq-toggle-icon">✦</span></div>
+                    <div class="faq-answer">Răspund la toate solicitările în maximum 24-48 de ore. Dacă nu ai primit un răspuns, te rog să verifici folderul Spam/Junk din e-mailul tău sau să trimiți din nou mesajul, asigurându-te că adresa este scrisă corect.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Lecturile de tarot îmi decid complet destinul? <span class="faq-toggle-icon">✦</span></div>
+                    <div class="faq-answer">Nu. Cărțile de tarot arată energiile și potențialul din momentul prezent, oferind ghidare și perspective. Deciziile finale și acțiunile îți aparțin întotdeauna în totalitate, având liber arbitru.</div>
+                </div>
+            </div>
             
         </div>
     </div>
-</body>
-</html>
+
+    <!-- Script simplu pentru a face animația de deschidere la click pe întrebări -->
