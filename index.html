@@ -39,15 +39,6 @@
             display: block;
             border-bottom: 2px solid #d4af37;
         }
-        .mobile-logo {
-            display: none;
-            padding: 30px 10px;
-            background: #220e3d;
-            color: #d4af37;
-            font-size: 2rem;
-            letter-spacing: 2px;
-            border-bottom: 2px solid #d4af37;
-        }
         .content {
             padding: 45px 35px;
         }
@@ -85,7 +76,7 @@
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
         
-        /* Efect Glow Casete */
+        /* Efect Glow Casete la selectare / mouse hover */
         .service-card:hover {
             transform: translateY(-5px);
             border-color: #d4af37;
@@ -146,14 +137,14 @@
             box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
         }
         
-        /* Efect Glow Buton */
+        /* Efect Glow Buton la selectare / mouse hover */
         .btn:hover {
             background: #f3cd46;
             transform: translateY(-2px);
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
         }
 
-        /* FAQ */
+        /* FAQ (Intrebari Frecvente) */
         .faq-section {
             text-align: left;
             margin-top: 40px;
@@ -175,7 +166,7 @@
             transition: border-color 0.3s, box-shadow 0.3s;
         }
         
-        /* Efect Glow FAQ */
+        /* Efect Glow FAQ la selectare / mouse hover */
         details:hover, details[open] {
             border-color: #d4af37;
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
@@ -213,11 +204,10 @@
             border-top: 1px solid rgba(212, 175, 55, 0.1);
         }
 
-        /* Mobil */
+        /* Setari speciale pentru ecrane de telefon */
         @media (max-width: 600px) {
             body { padding: 10px; }
-            .promo-img { display: none; } 
-            .mobile-logo { display: block; } 
+            .promo-img { display: block; } /* Poza ramane complet activa si pe telefon */
             .content { padding: 30px 15px; }
             h1 { font-size: 2.2rem; }
             .subtitle { font-size: 1.2rem; margin-bottom: 30px; }
@@ -229,15 +219,15 @@
 </head>
 <body>
     <div class="container">
+        <!-- Imaginea ta promoționala ramane afisata peste tot -->
         <img src="image_16901475.jpg" alt="Lunar Veil Tarot Banner" class="promo-img">
-        <div class="mobile-logo">🔮 LUNAR VEIL TAROT</div>
         
         <div class="content">
             <h1>Lunar Veil Tarot</h1>
             <p class="subtitle">Profită de oferta noastră specială. Alege serviciul de ghidare de care ai nevoie și trimite o solicitare prin e-mail.</p>
             
             <div class="services-grid">
-                <!-- Carieră -->
+                <!-- Serviciul 1: Cariera -->
                 <div class="service-card">
                     <div>
                         <div class="promo-tag">Ofertă 50%</div>
@@ -253,7 +243,7 @@
                     </div>
                 </div>
 
-                <!-- Dragoste -->
+                <!-- Serviciul 2: Dragoste -->
                 <div class="service-card">
                     <div>
                         <div class="promo-tag">Ofertă 50%</div>
@@ -269,7 +259,7 @@
                     </div>
                 </div>
 
-                <!-- Ghidare Spirituală -->
+                <!-- Serviciul 3: Ghidare Spirituala -->
                 <div class="service-card">
                     <div>
                         <div style="height: 29px;"></div>
@@ -284,6 +274,13 @@
                     </div>
                 </div>
             </div>
+
+            <!-- TOATE CELE 4 INTREBARI FAQ INTEGRATE AICI -->
+            <div class="faq-section">
+                <h2>✨ Întrebări Frecvente (FAQ)</h2>
+                
+                <details>
+                    <summary>Cum mă pregătesc pentru o ședință?</summary>
 
             <!-- ÎNTREBĂRILE TALE FAC SUNT AICI -->
             <div class="faq-section">
