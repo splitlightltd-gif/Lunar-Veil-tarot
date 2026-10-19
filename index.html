@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunar Veil Tarot - Servicii și Întrebări Frecvente</title>
+    <title>Lunar Veil Tarot - Servicii și Oferte Promoționale</title>
     <style>
         * {
             box-sizing: border-box;
@@ -64,6 +64,8 @@
             line-height: 1.7;
             margin-bottom: 40px;
         }
+        
+        /* Grila Servicii */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -79,12 +81,17 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
+        
+        /* Efect Glow Casete */
         .service-card:hover {
             transform: translateY(-5px);
             border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
+        
         .service-card h3 {
             color: #d4af37;
             font-size: 1.4rem;
@@ -96,13 +103,35 @@
             line-height: 1.5;
             margin-bottom: 20px;
         }
+        
+        .promo-tag {
+            background: #d4af37;
+            color: #1a0933;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .price-box {
+            margin-bottom: 15px;
+        }
+        .old-price {
+            font-size: 1.1rem;
+            color: #8b75a7;
+            text-decoration: line-through;
+            margin-right: 8px;
+        }
         .price {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: #fff;
             font-weight: bold;
-            margin-bottom: 15px;
-            display: block;
         }
+        
         .btn { 
             background: #d4af37; 
             color: #1a0933; 
@@ -116,10 +145,15 @@
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
         }
+        
+        /* Efect Glow Buton */
         .btn:hover {
             background: #f3cd46;
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
         }
+
+        /* FAQ */
         .faq-section {
             text-align: left;
             margin-top: 40px;
@@ -138,7 +172,15 @@
             border-radius: 8px;
             margin-bottom: 15px;
             overflow: hidden;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
+        
+        /* Efect Glow FAQ */
+        details:hover, details[open] {
+            border-color: #d4af37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+        
         summary {
             padding: 18px 20px;
             font-size: 1.2rem;
@@ -170,6 +212,8 @@
             padding: 20px;
             border-top: 1px solid rgba(212, 175, 55, 0.1);
         }
+
+        /* Mobil */
         @media (max-width: 600px) {
             body { padding: 10px; }
             .promo-img { display: none; } 
@@ -190,63 +234,83 @@
         
         <div class="content">
             <h1>Lunar Veil Tarot</h1>
-            <p class="subtitle">Descoperă ce îți rezervă viitorul. Alege serviciul de ghidare de care ai nevoie în acest moment și trimite o solicitare prin e-mail.</p>
+            <p class="subtitle">Profită de oferta noastră specială. Alege serviciul de ghidare de care ai nevoie și trimite o solicitare prin e-mail.</p>
             
             <div class="services-grid">
+                <!-- Carieră -->
                 <div class="service-card">
                     <div>
+                        <div class="promo-tag">Ofertă 50%</div>
                         <h3>💼 Carieră & Succes</h3>
                         <p>Ghidare profundă legată de job, afaceri sau schimbări profesionale importante în viața ta.</p>
                     </div>
                     <div>
-                        <span class="price">Ședință 45 min</span>
-                        <a href="mailto:splitlight.ltd@gmail.com?subject=Rezervare%20-%20Tarot%20Cariera" class="btn">BOOK NOW</a>
+                        <div class="price-box">
+                            <span class="old-price">50 RON</span>
+                            <span class="price">25 RON</span>
+                        </div>
+                        <a href="mailto:splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
                     </div>
                 </div>
 
+                <!-- Dragoste -->
                 <div class="service-card">
                     <div>
+                        <div class="promo-tag">Ofertă 50%</div>
                         <h3>❤️ Dragoste & Relații</h3>
                         <p>Claritate în viața sentimentală, compatibilitate de cuplu și răspunsuri la întrebări de suflet.</p>
                     </div>
                     <div>
-                        <span class="price">Ședință 45 min</span>
-                        <a href="mailto:splitlight.ltd@gmail.com?subject=Rezervare%20-%20Tarot%20Dragoste" class="btn">BOOK NOW</a>
+                        <div class="price-box">
+                            <span class="old-price">50 RON</span>
+                            <span class="price">25 RON</span>
+                        </div>
+                        <a href="mailto:splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
                     </div>
                 </div>
 
+                <!-- Ghidare Spirituală -->
                 <div class="service-card">
                     <div>
+                        <div style="height: 29px;"></div>
                         <h3>✨ Ghidare Spirituală</h3>
                         <p>O analiză completă a căii vieții tale, mesaje de la ghizii spirituali și evoluție personală.</p>
                     </div>
                     <div>
-                        <span class="price">Ședință 60 min</span>
-                        <a href="mailto:splitlight.ltd@gmail.com?subject=Rezervare%20-%20Ghidare%20Spirituala" class="btn">BOOK NOW</a>
+                        <div class="price-box">
+                            <span class="price">80 RON</span>
+                        </div>
+                        <a href="mailto:splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
                     </div>
                 </div>
             </div>
 
+            <!-- ÎNTREBĂRILE TALE FAC SUNT AICI -->
             <div class="faq-section">
-                <h2>✨ Întrebări Frecvente (FAQ)</h2>
-                
-                <details>
-                    <summary>Cum mă pregătesc pentru o ședință?</summary>
-                    <div class="faq-answer">Găsește un loc liniștit unde nu vei fi deranjat(ă). Înainte de sesiune, încearcă să îți clarifici intenția și gândește-te la 1-2 întrebări specifice pe care vrei să le adresezi cărților. Păstrează o minte deschisă.</div>
-                </details>
+        <!-- ACEASTA ESTE SECȚIUNEA FAQ CARE CONȚINE TOATE CELE 3 ÎNTREBĂRI DISTINCTE -->
+<div class="faq-section">
+    <h2>✨ Întrebări Frecvente (FAQ)</h2>
+    
+    <!-- Întrebarea 1 -->
+    <details>
+        <summary>Cum mă pregătesc pentru o ședință?</summary>
+        <div class="faq-answer">Găsește un loc liniștit unde nu vei fi deranjat(ă). Înainte de sesiune, încearcă să îți clarifici intenția și gândește-te la 1-2 întrebări specifice pe care vrei să le adresezi cărților. Păstrează o minte deschisă.</div>
+    </details>
 
-                <details>
-                    <summary>Ce se întâmplă dacă e-mailul nu ajunge?</summary>
-                    <div class="faq-answer">Răspund la toate solicitările în maximum 24-48 de ore. Dacă nu ai primit un răspuns, te rog să verifici folderul Spam/Junk din e-mailul tău sau să trimiți din nou mesajul, asigurându-te că adresa este scrisă corect.</div>
-                </details>
+    <!-- Întrebarea 2 -->
+    <details>
+        <summary>Ce se întâmplă dacă e-mailul nu ajunge?</summary>
+        <div class="faq-answer">Răspund la toate solicitările în maximum 24-48 de ore. Dacă nu ai primit un răspuns, te rog să verifici folderul Spam/Junk din e-mailul tău sau să trimiți din nou mesajul, asigurându-te că adresa este scrisă corect.</div>
+    </details>
 
-                <details>
-                    <summary>Lecturile de tarot îmi decid complet destinul?</summary>
-                    <div class="faq-answer">Nu. Cărțile de tarot arată energiile și potențialul din momentul prezent, oferind ghidare și perspective. Deciziile finale și acțiunile îți aparțin întotdeauna în totalitate, având liber arbitru.</div>
-                </details>
-            </div>
-            
-        </div>
-    </div>
-</body>
-</html>
+    <!-- Întrebarea 3 -->
+    <details>
+        <summary>Lecturile de tarot îmi decid complet destinul?</summary>
+        <div class="faq-answer">Nu. Cărțile de tarot arată energiile și potențialul din momentul prezent, oferind ghidare și perspective. Deciziile finale și acțiunile îți aparțin întotdeauna în totalitate, având liber arbitru.</div>
+    </details>
+</div>
+<details>
+    <summary>Pot adresa întrebări despre alte persoane?</summary>
+    <div class="faq-answer">Lecturile mele se concentrează pe energia, calea și acțiunile tale. Putem explora dinamica unei relații cu o altă persoană sau modul în care te afectează comportamentul ei, însă din motive etice nu pot citi gândurile sau secretele cuiva care nu și-a dat acordul direct.</div>
+</details>
+
