@@ -12,7 +12,11 @@
         }
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: #1a0933; 
+            /* Aici am adăugat o imagine mistică de fundal în spatele site-ului */
+            background-image: linear-gradient(rgba(26, 9, 51, 0.85), rgba(26, 9, 51, 0.85)), url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: #f4f4f9;
             display: flex;
             justify-content: center;
@@ -22,13 +26,13 @@
         }
         .container { 
             background: #2a144d; 
-            max-width: 600px;
+            max-width: 800px;
             width: 100%;
             border-radius: 15px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.7); 
             overflow: hidden;
             text-align: center;
-            border: 1px solid #d4af37; /* Margine aurie */
+            border: 2px solid #d4af37; /* Margine aurie puțin mai groasă */
         }
         .promo-img {
             width: 100%;
@@ -37,29 +41,30 @@
             border-bottom: 2px solid #d4af37;
         }
         .content {
-            padding: 35px 25px;
+            padding: 45px 35px;
         }
         h1 { 
             color: #d4af37; 
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 2.6rem; /* Dimensiune optimă pe PC */
+            margin-bottom: 20px;
             letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         p { 
             color: #dfd5f0; 
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            font-size: 1.4rem; /* Dimensiune optimă pe PC */
+            line-height: 1.7;
+            margin-bottom: 35px;
         }
         .btn { 
             background: #d4af37; 
             color: #1a0933; 
-            padding: 14px 40px; 
+            padding: 16px 50px; 
             text-decoration: none; 
-            border-radius: 25px; 
+            border-radius: 30px; 
             display: inline-block; 
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.3rem; 
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
             letter-spacing: 1px;
@@ -69,19 +74,40 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
+
+        /* CONFIGURARE SPECIALĂ PENTRU TELEFON (Mărește scrisul automat pe ecrane mici) */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .content {
+                padding: 30px 15px; /* Spațiu mai compact pe laterale */
+            }
+            h1 {
+                font-size: 2.2rem !important; /* Titlu foarte vizibil pe mobil */
+            }
+            p {
+                font-size: 1.3rem !important; /* Textul descrierii mărit special pentru telefon */
+                line-height: 1.6;
+            }
+            .btn {
+                font-size: 1.2rem !important;
+                width: 100%; /* Butonul ocupă toată lățimea pe telefon ca să fie ușor de apăsat */
+                padding: 15px 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Imaginea ta promoțională încarcată anterior -->
         <img src="image_16901475.jpg" alt="Lunar Veil Tarot Banner" class="promo-img">
         
         <div class="content">
             <h1>🔮 Lunar Veil Tarot</h1>
-            <p>Lecturi în Cariera, Calea Vieții și Ghidare Profundă a Sufletului. Trimite un e-mail pentru a rezerva o ședință personalizată.</p>
+            <p>Lecturi în Carieră, Calea Vieții și Ghidare Profundă a Sufletului. Trimite un e-mail pentru a rezerva o ședință personalizată.</p>
             
-            <!-- Schimbă adresa de mai jos cu e-mailul tău real. Păstrează textul "mailto:" în față -->
-            <a href="mailto:splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
+            <!-- Pune e-mailul tău în loc de adresa de mai jos -->
+            <a href="splitlight.ltd@gmail.com" class="btn">BOOK NOW</a>
         </div>
     </div>
 </body>
